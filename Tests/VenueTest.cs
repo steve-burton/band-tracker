@@ -30,6 +30,18 @@ namespace BandTracker.Objects
       Assert.Equal(0, allVenues.Count);
     }
 
+    [Fact]
+    public void Save_SavesToDatabase_true()
+    {
+      Venue newVenue = new Venue("Wonder Ballroom");
+      List<Venue> testList = new List<Venue>{newVenue};
+
+      newVenue.Save();
+      List<Venue> result = Venue.GetAll();
+
+      Assert.Equal(result, testList);
+    }
+
 
     public void Dispose()
     {

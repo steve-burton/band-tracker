@@ -42,6 +42,7 @@ namespace BandTracker.Objects
       Assert.Equal(result, testList);
     }
 
+
     public void Dispose()
     {
       Band.DeleteAll();
