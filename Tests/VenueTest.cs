@@ -53,6 +53,30 @@ namespace BandTracker.Objects
       Assert.Equal(newVenue, result);
     }
 
+    [Fact]
+    public void UpdateVenue_UpdateVenueInDB_true()
+    {
+      string venueName = "Wonder Ballroom";
+      Venue testVenue = new Venue(venueName);
+      testVenue.Save();
+
+      string newVenueName = "Wonder Dancehall";
+
+      testVenue.UpdateVenue(newVenueName);
+      string result = testVenue.GetVenueName();
+
+      Assert.Equal(newVenueName, result);
+    }
+
+
+
+
+
+
+
+
+
+
 
     public void Dispose()
     {
