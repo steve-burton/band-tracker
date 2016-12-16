@@ -45,6 +45,14 @@ namespace BandTracker
         model.Add("bandVenues", bandVenues);
         return View["band.cshtml", model];
 			};
+			Get["/venue/{id}"] = parameters => {
+				Venue selectedVenue = Venue.Find(parameters.id);
+				Dictionary<string, object> model = new Dictionary<string, object>();
+        List<Band> venueBands = selectedVenue.GetAllBands();
+        model.Add("venue", selectedVenue);
+        model.Add("venueBands", venueBands);
+        return View["venue.cshtml", model];
+			};
 		}
 	}
 }
