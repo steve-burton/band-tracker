@@ -17,7 +17,7 @@
 					else
 					{
           <h3>Add a band for this venue: </h3><h2>@Model.GetVenueName()</h2>
-					<form class="add-new-band" action="/added-band" method="post">
+					<form class="add-new-band" action="/band-added" method="post">
 						<div class="form-group">
 							<select name="venue-band">
 						    @foreach (var band in Model)

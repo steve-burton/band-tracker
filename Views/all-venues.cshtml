@@ -17,7 +17,7 @@
 					}
 					@foreach (var venue in Model)
 					{
-						<h4><a href="/venue/@venue.GetId()">@venue.GetVenueName()</a> | <a href="/venue/add-band/@venue.GetId()">Add band</a> | <a href="/venue/update/@venue.GetId()">Edit</a> | <a href="/venue/delete/@venue.GetId()">Delete</a></h4>
+						<h4><a href="/venue/@venue.GetId()">@venue.GetVenueName()</a> | <a href="/venue/venue-add-band/@venue.GetId()">Add band</a> | <a href="/venue/update/@venue.GetId()">Edit</a> | <a href="/venue/delete/@venue.GetId()">Delete</a></h4>
 					}
 					<br><br>
 					<h4><a href="/add-new-venue">Add a new venue</a></h4>
