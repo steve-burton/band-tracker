@@ -9,13 +9,13 @@ This project will create an app to allow users to track bands and the venues whe
 
 These are the steps I'll take to write my code:
 
-One I'll test to ensure the database is empty to begin with.
-* Input: 0
-* Output: 0
-
-Two I'll check for equality if bands or venues are the same.
+One I'll check for equality if bands or venues are the same.
 * Input: "Mighty Mighty Bosstones"
 * Output: "Mighty Mighty Bosstones"
+
+Two I'll test to ensure the database is empty to begin with.
+* Input: 0
+* Output: 0
 
 Three, test to ensure the user can save to the database.
 * Input: "Mighty Mighty Bosstones"
