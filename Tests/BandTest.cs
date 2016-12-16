@@ -30,6 +30,18 @@ namespace BandTracker.Objects
       Assert.Equal(0, allBands.Count);
     }
 
+    [Fact]
+    public void Save_SavesToDatabase_true()
+    {
+      Band newBand = new Band("Mighty Mighty Bosstones");
+      List<Band> testList = new List<Band>{newBand};
+
+      newBand.Save();
+      List<Band> result = Band.GetAll();
+
+      Assert.Equal(result, testList);
+    }
+
     public void Dispose()
     {
       Band.DeleteAll();
