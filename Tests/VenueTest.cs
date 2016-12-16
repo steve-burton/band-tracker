@@ -42,6 +42,17 @@ namespace BandTracker.Objects
       Assert.Equal(result, testList);
     }
 
+    [Fact]
+    public void Find_RetrievesVenueFromDB_true()
+    {
+      Venue newVenue = new Venue("Wonder Ballroom");
+      newVenue.Save();
+
+      Venue result = Venue.Find(newVenue.GetId());
+
+      Assert.Equal(newVenue, result);
+    }
+
 
     public void Dispose()
     {
