@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="/Content/css/styles.css">
+		<title>Band Tracker</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Add a new band</h2>*/
+					<form class="add-new-band" action="/added-band" method="post">
+						<div class="form-group">
+							<label for="band-name">Enter a new band:</label>
+	            <input type="text" class="form-control" name="band-name" id="band-name" placeholder="Band Name">
+						</div>
+	          <button class="btn" type="submit" name="button">Enter</button>
+	        </form>
+					<div>
+						<h4><a href="/">Return home</a></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

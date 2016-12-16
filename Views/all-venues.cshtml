@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="/Content/css/styles.css">
+		<title>Band Tracker</title>
+	</head>
+	<body>
+    <div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Venues</h2>
+					@if(@Model.Count == 0)
+					{
+						<h3>No venues have been added yet!</h3>
+					}
+					@foreach (var venue in Model)
+					{
+						<h4><a href="/venue/@venue.GetId()">@venue.GetBandName()</a> | <a href="/venue/add-band/@venue.GetId()">Add band</a> | <a href="/venue/update/@venue.GetId()">Edit</a> | <a href="/venue/delete/@venue.GetId()">Delete</a></h4>
+					}
+					<br><br>
+					<h4><a href="/add-new-venue">Add a new venue</a></h4>
+					<h4><a href="/add-new-band">Add a new band</a></h4>
+					<div>
+						<h4><a href="/">Return home</a></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
