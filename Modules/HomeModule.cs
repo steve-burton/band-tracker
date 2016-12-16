@@ -70,13 +70,10 @@ namespace BandTracker
 
 			Get["/venue/delete/{id}"] = parameters => {
 				Venue selectedVenue = Venue.Find(parameters.id);
+				selectedVenue.Delete();
 				return View["/success.cshtml", selectedVenue];
 			};
-			Patch["/venue/delete/{id}"] = parameters => {
-				Venue selectedVenue = Venue.Find(parameters.id);
-				selectedVenue.Delete();
-				return View["/success.cshtml"];
-			};
+			
 
 			Get["/band/{id}"] = parameters => {
 				Band selectedBand = Band.Find(parameters.id);
