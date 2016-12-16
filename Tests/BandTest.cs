@@ -42,6 +42,17 @@ namespace BandTracker.Objects
       Assert.Equal(result, testList);
     }
 
+    [Fact]
+    public void Find_RetrievesBandFromDB_true()
+    {
+      Band newBand = new Band("Mighty Mighty Bosstones");
+      newBand.Save();
+
+      Band result = Band.Find(newBand.GetId());
+
+      Assert.Equal(newBand, result);
+    }
+
 
     public void Dispose()
     {

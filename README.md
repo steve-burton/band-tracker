@@ -21,39 +21,35 @@ Three, test to ensure the user can save to the database.
 * Input: "Mighty Mighty Bosstones"
 * Output: "Mighty Mighty Bosstones"
 
-Four, test to ensure an ID is assigned to a band.
-* Input: 1
-* Output: 1
-
-Five, test that a user can find a band in the database by ID
+Four, test that a user can find a band in the database by ID
 * Input: Band ID
 * Output: "Mighty Mighty Bosstones"
 
-Six, write, in order, the same tests for a venue.
+Five, write, in order, the same tests for a venue.
 * Input: "Wonder Ballroom"
 * Output: "Wonder Ballroom"
 
-Seven, test to update venue.
+Six, test to update venue.
 * Input: "Wonder Ballroom"
 * Output: "Wonder Dancehall"
 
-Eight, test to delete a venue.
+Seven, test to delete a venue.
 * Input: "Wonder Ballroom"
 * Output: Empty
 
-Nine, test to add bands to a venue.
+Eight, test to add bands to a venue.
 * Input: "Mighty Mighty Bosstones"
 * Output: "Wonder Ballroom"
 
-Ten, test to add venues to a band.
+Nine, test to add venues to a band.
 * Input: "Wonder Ballroom"
 * Output: "Mighty Mighty Bosstones"
 
-Eleven, test to see all the bands that have played at a venue.
+Ten, test to see all the bands that have played at a venue.
 * Input: "Wonder Ballroom"
 * Output: "Mighty Mighty Bosstones", "Billy Bragg", "The Decemberists"
 
-Twelve, test to see all the venues a band has played at.
+Eleven, test to see all the venues a band has played at.
 * Input: "Mighty Mighty Bosstones"
 * Output: "Wonder Ballroom", "Crystal Ballroom"
 

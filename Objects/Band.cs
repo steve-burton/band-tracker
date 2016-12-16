@@ -91,6 +91,35 @@ namespace BandTracker.Objects
       }
     }
 
+		public static Band Find(int id)
+    {
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+
+      SqlCommand cmd = new SqlCommand("SELECT * FROM bands WHERE id = @BandId;", conn);
+      cmd.Parameters.AddWithValue("@BandId", id);
+      SqlDataReader rdr = cmd.ExecuteReader();
+
+      int foundId = 0;
+      string bandName = "";
+
+      while(rdr.Read())
+      {
+        foundId = rdr.GetInt32(0);
+        bandName = rdr.GetString(1);
+      }
+      Band foundBand = new Band(bandName, foundId);
+      if (rdr != null)
+      {
+        rdr.Close();
+      }
+      if (conn != null)
+      {
+        conn.Close();
+      }
+      return foundBand;
+    }
+
 
 
 
