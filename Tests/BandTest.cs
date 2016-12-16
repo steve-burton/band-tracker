@@ -22,6 +22,14 @@ namespace BandTracker.Objects
       Assert.Equal(band1, band2);
     }
 
+    [Fact]
+    public void GetAll_StartsWithEmptyDB_true()
+    {
+      List<Band> allBands = Band.GetAll();
+
+      Assert.Equal(0, allBands.Count);
+    }
+
     public void Dispose()
     {
       Band.DeleteAll();
