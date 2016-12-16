@@ -40,6 +40,34 @@ namespace BandTracker.Objects
 			}
 		}
 
+		public static List<Venue> GetAll()
+    {
+      List<Venue> allVenues= new List<Venue>{};
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+
+      SqlCommand cmd = new SqlCommand("SELECT * FROM venues;", conn);
+      SqlDataReader rdr = cmd.ExecuteReader();
+      while(rdr.Read())
+      {
+        int id = rdr.GetInt32(0);
+        string venueName = rdr.GetString(1);
+
+        Venue newVenue = new Venue(venueName, id);
+        allVenues.Add(newVenue);
+      }
+      if (rdr != null)
+      {
+        rdr.Close();
+      }
+      if (conn != null)
+      {
+        conn.Close();
+      }
+      return allVenues;
+    }
+
+
 
 
 		public static void DeleteAll()

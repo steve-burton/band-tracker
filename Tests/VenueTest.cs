@@ -22,6 +22,14 @@ namespace BandTracker.Objects
       Assert.Equal(venue1, venue2);
     }
 
+    [Fact]
+    public void GetAll_StartsWithEmptyDB_true()
+    {
+      List<Venue> allVenues = Venue.GetAll();
+
+      Assert.Equal(0, allVenues.Count);
+    }
+
 
     public void Dispose()
     {
