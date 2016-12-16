@@ -70,6 +70,24 @@ namespace BandTracker.Objects
       Assert.Equal(result, expectedList);
     }
 
+    [Fact]
+    public void GetAllVenues_ReturnsAllVenuesForABand_true()
+    {
+      Band newBand = new Band("Mighty Mighty Bosstones");
+      Venue venue1 = new Venue("Wonder Ballroom");
+      Venue venue2 = new Venue("Crystal Ballroom");
+      newBand.Save();
+      venue1.Save();
+      venue2.Save();
+      List<Venue> expectedList = new List<Venue> {venue1, venue2};
+
+      newBand.AddVenue(venue1.GetId());
+      newBand.AddVenue(venue2.GetId());
+      List<Venue> result = newBand.GetAllVenues();
+
+      Assert.Equal(result, expectedList);
+    }
+
 
 
 
