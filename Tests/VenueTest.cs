@@ -100,7 +100,23 @@ namespace BandTracker.Objects
       Assert.Equal(result, expectedList);
     }
 
+    [Fact]
+    public void GetAllBands_ReturnsAllBandsForAVenue_true()
+    {
+      Venue newVenue = new Venue("Wonder Ballroom");
+      Band band1 = new Band("Mighty Mighty Bosstones");
+      Band band2 = new Band("The Decemberists");
+      newVenue.Save();
+      band1.Save();
+      band2.Save();
+      List<Band> expectedList = new List<Band> {band1, band2};
 
+      newVenue.AddBand(band1.GetId());
+      newVenue.AddBand(band2.GetId());
+      List<Band> result = newVenue.GetAllBands();
+
+      Assert.Equal(result, expectedList);
+    }
 
 
 
@@ -111,6 +127,7 @@ namespace BandTracker.Objects
     public void Dispose()
     {
       Venue.DeleteAll();
+      Band.DeleteAll();
     }
   }
 }
