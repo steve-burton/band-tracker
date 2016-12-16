@@ -159,6 +159,52 @@ namespace BandTracker.Objects
 	    }
 	  }
 
+		public void AddBand(int bandId)
+    {
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+
+      SqlCommand cmd = new SqlCommand("INSERT INTO bands_venues (band_id, venue_id) VALUES (@BandId, @VenueId);", conn);
+      cmd.Parameters.AddWithValue("@VenueId", _id);
+			cmd.Parameters.AddWithValue("@BandId", bandId);
+      cmd.ExecuteNonQuery();
+      if (conn != null)
+      {
+        conn.Close();
+      }
+    }
+
+		public List<Band> GetAllBands()
+    {
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+
+      SqlCommand cmd = new SqlCommand("SELECT bands.* FROM venues JOIN bands_venues ON (venues.id = bands_venues.venue_id) JOIN bands ON (bands_venues.band_id = bands.id) WHERE venues.id = @VenueId;", conn);
+      cmd.Parameters.AddWithValue("@VenueId", _id);
+      SqlDataReader rdr = cmd.ExecuteReader();
+
+      int foundId = 0;
+      string bandName = "";
+      List<Band> venueBands = new List<Band> {};
+
+      while(rdr.Read())
+      {
+        foundId = rdr.GetInt32(0);
+        bandName = rdr.GetString(1);
+        Band foundBand = new Band(bandName, foundId);
+        venueBands.Add(foundBand);
+      }
+      if (rdr != null)
+      {
+        rdr.Close();
+      }
+      if (conn != null)
+      {
+        conn.Close();
+      }
+      return venueBands;
+    }
+
 
 
 
