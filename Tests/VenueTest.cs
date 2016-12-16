@@ -13,6 +13,14 @@ namespace BandTracker.Objects
       DBConfiguration.ConnectionString = "Data Source =(localdb)\\mssqllocaldb;Initial Catalog=band_tracker_test;Integrated Security =SSPI;";
     }
 
+    [Fact]
+    public void Equals_EqualsOverrideComparesObjects_true()
+    {
+      Venue venue1 = new Venue("Wonder Ballroom");
+      Venue venue2 = new Venue("Wonder Ballroom");
+
+      Assert.Equal(venue1, venue2);
+    }
 
 
     public void Dispose()

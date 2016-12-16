@@ -13,7 +13,7 @@ namespace BandTracker.Objects
 		public Band(string bandName, int id = 0)
 		{
 			_id = id;
-			_bandName = bandName,
+			_bandName = bandName;
 		}
 
 		public int GetId()
