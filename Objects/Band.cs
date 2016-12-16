@@ -25,7 +25,8 @@ namespace BandTracker.Objects
 			return _bandName;
 		}
 
-		
+
+
 		public static void DeleteAll()
 		{
 			SqlConnection conn = DB.Connection();
