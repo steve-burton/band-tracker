@@ -1,0 +1,64 @@
+body {
+  background-image: url(/Content/mmb-photo.jpg);
+  background-size: cover;
+  /*padding: 10% 10% 1% 10%;*/
+  background-repeat: no-repeat;
+}
+
+.col-md-12 {
+  width: 90%;
+  margin: 8% 10% 6% 5%;
+  border-radius: 20px;
+  padding: 2% 5% 2% 5%;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.center-col {
+  width: 40%;
+  margin: 3% 25% 6% 30%;
+  border-radius: 20px;
+  padding: 6% 10% 3% 10%;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+a:link {
+  color: rgb(68, 39, 0);;
+}
+a:visited {
+  color: rgb(68, 39, 0);;
+}
+a:hover {
+  color: rgb(186, 105, 0);
+}
+.btn {
+  background-color: rgb(186, 105, 0);
+}
+
+form {
+  padding-right: 10%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5em;
+  font-weight: lighter;
+  color: rgb(68, 39, 0);
+}
+h2 {
+  text-align: center;
+  color: rgb(68, 39, 0);
+}
+
+h3 {
+  line-height: 130%;
+  text-align: center;
+  font-weight: 400;
+  color: rgb(68, 39, 0);
+}
+
+h4 {
+  line-height: 130%;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(68, 39, 0);
+}

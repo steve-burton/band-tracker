@@ -10,14 +10,15 @@
     <div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					@if(@Model.Count == 0)
+				  @if(@Model.Count == 0)
 					{
 					  <h2>You need to add a venue first</h2>
 					}
 					else
 					{
-          <h3>Add a venue for this band: </h3><h2>@Model.GetBandName()</h2>
-					<form class="add-new-venue" action="/venue-added" method="post">
+          <h3>Add a venue for this band:</h3>
+          <h2>@Model.GetBandName()</h2>
+					<form class="add-venue" action="/band/band-add-venue" method="post">
 						<div class="form-group">
 							<select name="band-venue">
 						    @foreach (var venue in Model)

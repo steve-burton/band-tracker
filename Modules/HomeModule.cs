@@ -38,22 +38,25 @@ namespace BandTracker
 				return View["/success.cshtml"];
 			};
 
-			Get["/band-add-venue/{id}"] = parameters => {
+
+			Get["/band/band-add-venue/{id}"] = parameters => {
 				Band selectedBand = Band.Find(parameters.id);
+				var allVenues = Venue.GetAll();
 				return View["/band-add-venue.cshtml", selectedBand];
 			};
-			Post["/venue-added"] = _ => {
-				Band newBand = new Band(Request.Form["band-venue"]);
-				newBand.Save();
+			Post["/band/band-add-venue"] = parameters => {  //Change to Patch ??
+				Band selectedBand = Band.Find(parameters.id);
+				selectedBand.AddVenue(Request.Form["band-venue"]);
 				return View["/success.cshtml"];
 			};
-			Get["/venue-add-band/{id}"] = parameters => {
+			Get["/venue/venue-add-band/{id}"] = parameters => {
 				Venue selectedVenue = Venue.Find(parameters.id);
+				var allBands = Band.GetAll();
 				return View["/venue-add-band.cshtml", selectedVenue];
 			};
-			Post["/band-added"] = _ => {
-				Venue newVenue = new Venue(Request.Form["venue-band"]);
-				newVenue.Save();
+			Post["/venue/venue-add-band"] = _ => {   //Change to Patch ??
+				Venue selectedVenue = new Venue(Request.Form["venue-band"]);
+				selectedVenue.AddBand(Request.Form["venue-band"]);
 				return View["/success.cshtml"];
 			};
 
@@ -67,14 +70,11 @@ namespace BandTracker
 				selectedVenue.UpdateVenue(Request.Form["venue-name"]);
 				return View["/success.cshtml"];
 			};
-
 			Get["/venue/delete/{id}"] = parameters => {
 				Venue selectedVenue = Venue.Find(parameters.id);
 				selectedVenue.Delete();
 				return View["/success.cshtml", selectedVenue];
 			};
-			
-
 			Get["/band/{id}"] = parameters => {
 				Band selectedBand = Band.Find(parameters.id);
 				Dictionary<string, object> model = new Dictionary<string, object>();
