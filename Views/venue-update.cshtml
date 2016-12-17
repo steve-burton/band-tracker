@@ -10,13 +10,14 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h3>Update venue: </h3><h2>@Model.GetVenueName()</h2>
+					<h3>Update venue: </h3>
+					<h2>@Model.GetVenueName()</h2>
 					<form class="venue-update" action="/venue/update/@Model.GetId()" method="post">
 						<div class="form-group">
 							<input type="hidden" class="form-control" name="_method" value="PATCH">
 							<input type="hidden" class="form-control" name="venue-id" value="@Model.GetId()">
 							<label for="venue-name">Venue name</label>
-							<input type="text" class="form-control" name="venue-name" id="venue-name" placeholder="Band Name">
+							<input type="text" class="form-control" name="venue-name" id="venue-name" placeholder="Venue Name">
 						</div>
 						<button class="btn" type="submit" name="button">Enter</button>
 					</form>

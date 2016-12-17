@@ -18,10 +18,12 @@
 					{  *@
           <h3>Add a venue for this band:</h3>
           <h2>@Model["band"].GetBandName()</h2>
-					<form class="add-venue" action="/band/band-add-venue" method="post">
+					<form class="add-venue" action="/band/band-add-venue/@Model["band"].GetId()" method="post">
 						<div class="form-group">
+            <input type="hidden" class="form-control" name="_method" value="PATCH">
+            <input type="hidden" class="form-control" name="band-id" value="@Model["band"].GetId()">
 							<select name="band-venue">
-						    @foreach (var venue in Model)
+						    @foreach (var venue in Model["venue"])
 						    {
 						      <option value="@venue.GetId()">@venue.GetVenueName()</option>
 						    }
