@@ -22,16 +22,16 @@ body {
 }
 
 a:link {
-  color: rgb(68, 39, 0);;
+  color: rgb(16, 23, 35);
 }
 a:visited {
-  color: rgb(68, 39, 0);;
+  color: rgb(16, 23, 35);
 }
 a:hover {
-  color: rgb(186, 105, 0);
+  color: rgb((61, 74, 96);
 }
 .btn {
-  background-color: rgb(186, 105, 0);
+  background-color: rgb((61, 74, 96);
 }
 
 form {
@@ -42,23 +42,21 @@ h1 {
   text-align: center;
   font-size: 5em;
   font-weight: lighter;
-  color: rgb(68, 39, 0);
+  color: rgb(16, 23, 35);
 }
 h2 {
   text-align: center;
-  color: rgb(68, 39, 0);
+  color: rgb(16, 23, 35);
 }
-
 h3 {
   line-height: 130%;
   text-align: center;
   font-weight: 400;
-  color: rgb(68, 39, 0);
+  color: rgb(16, 23, 35);
 }
-
 h4 {
   line-height: 130%;
   text-align: center;
   font-weight: bold;
-  color: rgb(68, 39, 0);
+  color: rgb(16, 23, 35);
 }
