@@ -38,11 +38,14 @@ namespace BandTracker
 				return View["/success.cshtml"];
 			};
 
-
+		// #### This is where it's broke
 			Get["/band/band-add-venue/{id}"] = parameters => {
 				Band selectedBand = Band.Find(parameters.id);
+				Dictionary<string, object> model = new Dictionary<string, object>();
 				var allVenues = Venue.GetAll();
-				return View["/band-add-venue.cshtml", selectedBand];
+				model.Add("band", selectedBand);
+				model.Add("venue", allVenues);
+				return View["/band-add-venue.cshtml", model];
 			};
 			Post["/band/band-add-venue"] = parameters => {  //Change to Patch ??
 				Band selectedBand = Band.Find(parameters.id);
@@ -51,7 +54,9 @@ namespace BandTracker
 			};
 			Get["/venue/venue-add-band/{id}"] = parameters => {
 				Venue selectedVenue = Venue.Find(parameters.id);
+				Dictionary<string, object> model = new Dictionary<string, object>();
 				var allBands = Band.GetAll();
+				model.Add("band", allBands);
 				return View["/venue-add-band.cshtml", selectedVenue];
 			};
 			Post["/venue/venue-add-band"] = _ => {   //Change to Patch ??
