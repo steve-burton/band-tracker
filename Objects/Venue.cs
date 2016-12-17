@@ -165,8 +165,8 @@ namespace BandTracker.Objects
       conn.Open();
 
       SqlCommand cmd = new SqlCommand("INSERT INTO bands_venues (band_id, venue_id) VALUES (@BandId, @VenueId);", conn);
-      cmd.Parameters.AddWithValue("@VenueId", _id);
 			cmd.Parameters.AddWithValue("@BandId", bandId);
+      cmd.Parameters.AddWithValue("@VenueId", _id);
       cmd.ExecuteNonQuery();
       if (conn != null)
       {

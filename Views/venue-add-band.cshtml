@@ -16,12 +16,14 @@
 					}
 					else
 					{
-          <h3>Add a band for this venue: </h3>
-					<h2>@Model.GetVenueName()</h2>
-					<form class="add-band" action="/venue/venue-add-band" method="post">
+          <h3>Add a venue for this band: </h3>
+					<h2>@Model["venue"].GetVenueName()</h2>
+					<form class="add-band" action="/venue/venue-add-band/@Model["venue"].GetId()" method="post">
 						<div class="form-group">
+						<input type="hidden" class="form-control" name="_method" value="PATCH">
+            <input type="hidden" class="form-control" name="venue-id" value="@Model["venue"].GetId()">
 							<select name="venue-band">
-						    @foreach (var band in Model)
+						    @foreach (var band in Model["band"])
 						    {
 						      <option value="@band.GetId()">@band.GetBandName()</option>
 						    }

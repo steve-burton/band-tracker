@@ -38,20 +38,7 @@ namespace BandTracker
 				return View["/success.cshtml"];
 			};
 
-		// #### This is where it's broke
-			// Get["/band/band-add-venue/{id}"] = parameters => {
-			// 	Band selectedBand = Band.Find(parameters.id);
-			// 	Dictionary<string, object> model = new Dictionary<string, object>();
-			// 	var allVenues = Venue.GetAll();
-			// 	model.Add("band", selectedBand);
-			// 	model.Add("venue", allVenues);
-			// 	return View["/band-add-venue.cshtml", model];
-			// };
-			// Post["/band/band-add-venue"] = parameters => {  //Change to Patch ??
-			// 	Band selectedBand = Band.Find(parameters.id);
-			// 	selectedBand.AddVenue(Request.Form["band-venue"]);
-			// 	return View["/success.cshtml"];
-			// };
+
 			Get["/band/band-add-venue/{id}"] = parameters => {
 				Band selectedBand = Band.Find(parameters.id);
 				List<Venue> allVenues = Venue.GetAll();
@@ -65,19 +52,20 @@ namespace BandTracker
 				selectedBand.AddVenue(Request.Form["band-venue"]);
 				return View["/success.cshtml"];
 			};
+
 			Get["/venue/venue-add-band/{id}"] = parameters => {
 				Venue selectedVenue = Venue.Find(parameters.id);
+				List<Band> allBands = Band.GetAll();
 				Dictionary<string, object> model = new Dictionary<string, object>();
-				var allBands = Band.GetAll();
+				model.Add("venue", selectedVenue);
 				model.Add("band", allBands);
-				return View["/venue-add-band.cshtml", selectedVenue];
+				return View["/venue-add-band.cshtml", model];
 			};
-			Post["/venue/venue-add-band"] = _ => {   //Change to Patch ??
-				Venue selectedVenue = new Venue(Request.Form["venue-band"]);
+			Patch["/venue/venue-add-band/{id}"] = parameters => {
+				Venue selectedVenue = Venue.Find(parameters.id);
 				selectedVenue.AddBand(Request.Form["venue-band"]);
 				return View["/success.cshtml"];
 			};
-
 
 
 			Get["/venue/update/{id}"] = parameters => {
