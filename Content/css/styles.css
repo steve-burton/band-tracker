@@ -1,10 +1,8 @@
 body {
   background-image: url(/Content/mmb-photo.jpg);
   background-size: cover;
-  /*padding: 10% 10% 1% 10%;*/
   background-repeat: no-repeat;
 }
-
 .col-md-12 {
   width: 70%;
   margin: 8% 5% 6% 15%;
@@ -12,7 +10,6 @@ body {
   padding: 2% 5% 2% 5%;
   background-color: rgba(255, 255, 255, 0.6);
 }
-
 .center-col {
   width: 40%;
   margin: 3% 25% 6% 30%;
@@ -20,7 +17,6 @@ body {
   padding: 3% 10% 3% 10%;
   background-color: rgba(255, 255, 255, 0.7);
 }
-
 a:link {
   color: rgb(16, 23, 35);
 }
@@ -28,16 +24,14 @@ a:visited {
   color: rgb(16, 23, 35);
 }
 a:hover {
-  color: rgb((61, 74, 96);
+  color: rgb(61, 74, 96);
 }
 .btn {
-  background-color: rgb((61, 74, 96);
+  background-color: rgb(106, 114, 132);
 }
-
 form {
   padding-right: 10%;
 }
-
 h1 {
   text-align: center;
   font-size: 5em;
@@ -46,17 +40,18 @@ h1 {
 }
 h2 {
   text-align: center;
+  font-size: 3em;
   color: rgb(16, 23, 35);
 }
 h3 {
   line-height: 130%;
   text-align: center;
-  font-weight: 400;
+  font-weight: 500;
   color: rgb(16, 23, 35);
 }
 h4 {
-  line-height: 130%;
+  line-height: 120%;
   text-align: center;
-  font-weight: bold;
+  font-weight: 500;
   color: rgb(16, 23, 35);
 }
